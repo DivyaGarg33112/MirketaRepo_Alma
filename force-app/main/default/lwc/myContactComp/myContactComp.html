@@ -1,0 +1,17 @@
+<!--Step 2 :- Create the UI for the child component , Here I have created 
+a lightning card that will display the data from its contactObj property...
+-->
+
+<template>
+    <lightning-card  title={contactObj.accountName}>
+      <!--  <lightning-button label="View Details" slot="actions"></lightning-button>
+        <p class="slds-p-horizontal_small">
+            Name : {contactObj.firstName}  {contactObj.lastName}<br/>
+            Email : {contactObj.email}<br/>
+            Contact Number : {contactObj.contactNumber}
+        </p>
+        <p slot="footer">View Details</p>-->
+        <lightning-input label="First Name" value={contactObj.firstName}
+        onchange={handleChange}></lightning-input>
+    </lightning-card>
+</template>

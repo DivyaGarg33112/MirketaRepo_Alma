@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-box" style="background-color:cadetblue">
+        <!--<lightning-input type="number" label="First Number" placeholder="Enter the First Number" onchange={handleFirst} value={firstNumber}></lightning-input>-->
+        <lightning-input type="number" label="First Number" placeholder="Enter the First Number" onchange={handleFirst}></lightning-input>
+        <lightning-input type="number" label="Second Number" placeholder="Enter the Second Number" onchange={handleSecond}></lightning-input>
+        <lightning-button variant="brand" label="Add" title="Add" onclick={handleAdd} class="slds-m-left_x-small"></lightning-button>
+
+        <template if:true={showResult}>
+            <h1>The Result is : {result}</h1>
+        </template>
+        <template if:false={showResult}>
+            Click on Button to get the addition of two numbers..
+        </template>
+
+    </div>
+</template>

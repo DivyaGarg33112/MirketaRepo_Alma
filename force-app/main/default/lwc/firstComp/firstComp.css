@@ -1,0 +1,11 @@
+.myDiv{
+    background-color:antiquewhite;
+    height:100px;
+    width:100%;
+}
+.myHeading{
+    color:blue;
+    text-align:center;
+    padding:20px;
+    font-weight:500;
+}

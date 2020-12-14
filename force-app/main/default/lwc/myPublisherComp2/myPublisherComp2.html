@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Color Selector">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-combobox label="Color" options={listOfColor}
+                onchange={changeColor}></lightning-combobox>
+                <div class="slds-p-top-small">
+                    <lightning-button label="Display Color" variant="brand" onclick={handleColorChange}></lightning-button>
+                </div>
+            </lightning-layout-item>
+            
+        </lightning-layout>
+    </lightning-card>
+</template>

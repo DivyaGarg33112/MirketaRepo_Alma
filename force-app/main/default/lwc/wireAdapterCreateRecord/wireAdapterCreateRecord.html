@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-box" style="background-color:khaki;color:red">
+        <lightning-input label="Enter Account Name" name="accName" type="text" 
+        required onchange={handleChange}></lightning-input>
+        
+        <lightning-input label="Enter Account Phone" name="accPhone" type="text"
+         required onchange={handleChange}></lightning-input>
+        
+         <lightning-input label="Enter Account Industry" name="accIndustry" 
+        type="text" required onchange={handleChange}></lightning-input>
+        
+        <lightning-input label="Enter Number Of Employees"
+         name="accNoOfEmployees" type="text" onchange={handleChange} required></lightning-input>
+        
+         <lightning-button variant="brand" label="Create Account"
+         onclick={createAccount}></lightning-button>
+    </div>
+</template>

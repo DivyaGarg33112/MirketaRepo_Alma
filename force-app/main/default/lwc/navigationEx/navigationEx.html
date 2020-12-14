@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-box" style="background-color:antiquewhite">
+        <lightning-input type="text" label="Enter some text" onchange={handleChange}></lightning-input>
+
+        <h1>Entered data is : {inputData}</h1>
+        <lightning-button label="Click Here to Navigate to Account Home Page"
+            title="Navigate to Object Home Page" onclick={navigateToAccountHomePage}></lightning-button><br/>
+
+            <lightning-button label="Click Here to Navigate to Account New Record Page"
+            title="Navigate to Object New Record Page" onclick={navigateToAccountNewRecordPage}></lightning-button><br/>    
+
+            <lightning-button label="Click Here to Navigate to Account View Record Page"
+            title="Navigate to Object View Record Page" onclick={navigateToAccountViewRecordPage}></lightning-button><br/>    
+
+            <lightning-button label="Click Here to Navigate to Account Edit Record Page"
+            title="Navigate to Object Edit Record Page" onclick={navigateToAccountEditRecordPage}></lightning-button><br/>    
+
+            <lightning-button label="Click Here to Navigate to Web Page"
+            title="Navigate to Web Page" onclick={navigateToWebPage}></lightning-button><br/>    
+    </div>
+</template>

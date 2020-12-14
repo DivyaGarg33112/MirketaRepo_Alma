@@ -1,0 +1,62 @@
+<template>
+    <div class="slds-box slds-p-around_small" style="background-color:lightcoral">
+
+        {resultMsg}
+        <lightning-input label="Enter Account Name whose Cases need to be searched" placeholder="Enter the Account Name" onchange={handleChange}></lightning-input>
+
+            <template if:true={cases.data}>
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <template for:each={cases.data} for:item="caseObj">
+                        <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={caseObj.Id}>
+                    
+                            <!--We can have a sepeate component for
+                            lightning card where we will pass 
+                            the case Object from this parent component to 
+                            that child compponent . Here we can revise
+                            the concept of component composition-->
+                            <lightning-card title={caseObj.CaseNumber} key={caseObj.Id}>
+                                <div slot="actions">
+                                    <!--Here you can have one
+                                    button labelled as View Details
+                                    which will be navigate to Record
+                                    detail page of the case , so here we can
+                                    revise navigation service...-->
+                                    <template if:true={caseObj.IsClosed}>
+                                        <span style="color:green;font-weight:bold">
+                                            Already Closed
+                                        </span>
+                                    </template>
+                                    <template if:false={caseObj.IsClosed}>
+
+                                        <lightning-button variant="brand" name={caseObj.Id} 
+                                        value={caseObj.Id} label="Close Case" onclick={closeCase}></lightning-button>
+
+                                        <lightning-button variant="brand" name={caseObj.Id} 
+                                        value={caseObj.Id} label="Add New Comment" 
+                                        onclick={newCommentAdd}></lightning-button>
+                                    </template>
+                                </div>
+                                <p class="slds-p-horizontal_small">
+                                    Description : {caseObj.Description}
+                                </p>
+                                <p class="slds-p-horizontal_small">
+                                    Account Name : {caseObj.Account.Name}
+                                </p>
+                                <p class="slds-p-horizontal_small">
+                                    Status : {caseObj.Status}
+                                </p>
+                                <p class="slds-p-horizontal_small">
+                                    Priority : {caseObj.Priority}
+                                </p>
+                            </lightning-card>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            
+        
+        <!--child component-->
+        <c-case-comment-comp></c-case-comment-comp>
+           
+    </div>
+</template>

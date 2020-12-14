@@ -1,0 +1,32 @@
+<template>
+    <div class="slds-box" style="background-color: burlywood;">
+
+        <lightning-combobox
+            name="accountList"
+            label="Select the Account"
+            placeholder="Select the Account"
+            options={accountsList}
+            value={selectedAccount}
+            onchange={handleChange}
+            ></lightning-combobox>
+
+
+        <template if:true={contactsList.data}>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <template for:each={contactsList.data} for:item="contact">
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={contact.Id}>
+                        <lightning-card  title={contact.Account.Name}>
+                            <lightning-button label="View Details" slot="actions"
+                            onclick={handleClick} value={contact.Id}></lightning-button>
+                            <p class="slds-p-horizontal_small">{contact.Name}</p>
+                            <p class="slds-p-horizontal_small">{contact.Phone}</p>
+                            <p class="slds-p-horizontal_small">{contact.Email}</p>
+                            <p slot="footer">Contact Details</p>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </template>
+      
+    </div>
+</template>

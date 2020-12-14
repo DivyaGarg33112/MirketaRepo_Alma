@@ -1,0 +1,93 @@
+<template>
+    <div class="slds-box" style="background-color:antiquewhite">
+       
+        <!--<lightning-record-form object-api-name={objectApiName}
+            record-id={recordId}
+            layout-type="Compact"
+            >
+        </lightning-record-form>-->
+
+        
+       <!-- <lightning-record-form object-api-name={objectApiName}
+            record-id={recordId}
+            fields={fields}
+            columns="2" mode="readonly">
+        </lightning-record-form>-->
+
+        
+        <!--lightning-record-form and lightning-record-view-form both can be both
+        to read the salesforce record  , but lightning-record-view-form 
+        give the explicitly to customize the form layout using slds-->
+        
+        <!--<lightning-record-view-form record-id={recordId}
+        object-api-name={objectApiName}>
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Name"></lightning-output-field>
+                <lightning-output-field field-name="Phone"></lightning-output-field>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-output-field field-name="Industry"></lightning-output-field>
+                <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+            </div>
+        </div>
+        </lightning-record-view-form>-->
+
+
+        <!--Lets see how to create salesforce record using 
+        lightning-record-form   -->
+
+        
+        <!--
+            <lightning-record-form object-api-name={objectName}
+        columns="2" layout-type="Full"></lightning-record-form>
+    -->
+       
+    <!--<lightning-record-form object-api-name={objectName}
+        columns="2" fields={fields} onsuccess={handleAccountCreated}></lightning-record-form>-->
+
+        <!--Now to create a salesforce record , we have seen how to use
+        lightning-record-form but if you want to customize the layout of the form
+    to create the record , you can use lightning-record-edit-form 
+    -->
+    <lightning-record-edit-form
+     object-api-name={objectName} 
+     record-id={recordId}
+     onsuccess={handleAccountCreated}>
+        <lightning-messages></lightning-messages>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                <lightning-input-field field-name={accountName}></lightning-input-field>
+            </div>
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+            <lightning-input-field field-name={accountPhone}></lightning-input-field>
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+            <lightning-input-field field-name={accountIndustry}></lightning-input-field>
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+            <lightning-input-field field-name={accountAnnualRevenue}></lightning-input-field>
+        </div>
+        <div class="slds-align_absolute-center">
+            <lightning-button type="submit" variant="brand" label="Create Account">
+            </lightning-button>
+            <lightning-button variant="brand" label="Cancel" onclick={handleCancel}></lightning-button>
+        </div>
+        </div>
+    </lightning-record-edit-form>
+
+ </div>
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+

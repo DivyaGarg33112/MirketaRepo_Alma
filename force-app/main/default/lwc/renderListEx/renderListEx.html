@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-box" style="background-color:aquamarine">
+    <!--<ul>
+       <template for:each={contacts} for:item="contact" for:index="contactIndex">
+            <li key={contact.Id}>{contactIndex} -  {contact.name} {contact.email}</li>
+       </template>
+    </ul>-->
+
+    <!--<div class="slds-grid slds-gutters slds-wrap">
+    <template for:each={contacts} for:item="contact">
+        <lightning-card  title={contact.accountName} key={contact.Id} 
+        class="slds-col slds-size_1-of-3">
+            <p class="slds-p-horizontal_small">
+                Name : {contact.name} <br/>
+                contact Number : {contact.contactNumber}
+         </p>
+            <p slot="footer">{contact.email}</p>
+        </lightning-card>
+    </template>
+    </div>-->
+
+    <ul>
+      
+    <template iterator:contact={contacts}>
+            <div if:true={contact.first} key={contact.value.Id} class="myFirstEm"></div> 
+            <li key={contact.value.Id}>
+                 {contact.index} -  {contact.value.name} {contact.value.email}
+            </li>
+            <div if:true={contact.last} key={contact.value.propertyName} class="myLastEm"></div> 
+        </template>
+     </ul>
+
+
+    </div>
+</template>

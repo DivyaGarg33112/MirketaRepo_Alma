@@ -1,0 +1,9 @@
+<template>
+    <div class="slds-m-around_medium" style="background-color:deeppink">
+        <span style="color:blue">
+            From Child component : {empId} - {empName}
+        </span>
+        
+        <c-child-component-event onmycustevent={handleCustomEvent}></c-child-component-event>
+    </div>
+</template>

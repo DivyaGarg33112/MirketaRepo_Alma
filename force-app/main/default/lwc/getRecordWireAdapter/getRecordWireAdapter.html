@@ -1,0 +1,38 @@
+<template>
+    <div class="slds-box" style="background-color:floralwhite;color:green">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+            <tr>
+                <td>
+                    <span style="font-weight: bold;color:fuchsia;">Title</span>
+                </td>
+                <td>
+                    <lightning-formatted-text value={contactTitle}></lightning-formatted-text>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="font-weight: bold;color:fuchsia;">Name</span>
+                </td>
+                <td>
+                    <lightning-formatted-text value={contactName}></lightning-formatted-text>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="font-weight: bold;color:fuchsia;">Phone</span>
+                </td>
+                <td>
+                    <lightning-formatted-text value={contactPhone}></lightning-formatted-text>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span style="font-weight: bold;color:fuchsia;">Email</span>
+                </td>
+                <td>
+                    <lightning-formatted-text value={contactEmail}></lightning-formatted-text>
+                </td>
+            </tr>
+        </table> 
+    </div>
+</template>

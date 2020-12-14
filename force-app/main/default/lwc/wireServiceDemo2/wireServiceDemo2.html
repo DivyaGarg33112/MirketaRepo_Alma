@@ -1,0 +1,41 @@
+<template>
+
+    <lightning-input name="input1" label="Enter the Account name you want to Search"
+        onchange={handleChange}></lightning-input>
+    <br/>    
+    <div style="height: 300px;">
+        <template if:true={allCases.data}>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <template for:each={allCases.data} for:item="caseObj">
+                    <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={caseObj.Id}>
+                        <lightning-card  title={caseObj.caseNumber}>
+                            <div slot="actions">
+                                <template if:true={caseObj.IsClosed}>
+                                    <span style="color:green;font-weight:bold">Already Closed</span>
+                                </template>
+                                <template if:false={caseObj.IsClosed}>
+                                    <lightning-button variant="success" name={caseObj.Id} value={caseObj.Id} label="Close Case" onclick={closeCase}></lightning-button>
+                                </template>
+                            </div>
+                            <p class="slds-p-horizontal_small">
+                                <span style="color:brown">Description</span> {caseObj.Description}
+                            </p>
+                            <p class="slds-p-horizontal_small">
+                                <span style="color:brown">Account Name</span> {caseObj.Account.Name}
+                            </p>
+                            <p class="slds-p-horizontal_small">
+                                <span style="color:brown">Status</span> {caseObj.Status}
+                            </p>
+                            <p class="slds-p-horizontal_small">
+                                <span style="color:brown">Priority</span> {caseObj.Priority}
+                            </p>
+                            <p style="color:cornflowerblue" slot="footer">
+                                {caseObj.s}
+                            </p>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>    
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-box" style="background-color:antiquewhite">
+
+        <div class="slds-grid slds-gutters slds-wrap">
+        <template for:each={contactList} for:item="contact">
+
+            <!--myContactComp is the child component , and I am passing the 
+            contact object fetched from the contactList via the public 
+            property named as contactObj to the child component , 
+            that child component will display the contact details in 
+            a lightning card...-->
+            <c-my-contact-comp contact-obj={contact} key={contact.contactId} class="slds-col slds-size_1-of-3">
+            </c-my-contact-comp>
+        </template>
+        </div>
+    </div>
+</template>
+

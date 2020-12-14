@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-box" style="background-color:blanchedalmond">
+        <h1>User Id : {userId}</h1>
+        <template if:true={userStatus}>
+            User is a Guest User
+        </template>
+        <template if:false={userStatus}>
+            User is an authenticated User
+        </template>
+    </div>
+</template>

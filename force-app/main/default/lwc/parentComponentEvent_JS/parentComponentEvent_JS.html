@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-m-around_medium" style="background-color:deeppink">
+        <span style="color:blue">
+            From Child component : {empId} - {empName}
+        </span>
+
+        <lightning-button label="Show or Hide Child" variant="brand" onclick={handleClick}></lightning-button>
+
+        <template if:true={showChild}>
+            <c-child-component-event></c-child-component-event>
+        </template>
+
+
+    </div>
+</template>
